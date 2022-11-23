@@ -4,11 +4,13 @@
 #include "App.h"
 
 #include "Rook.h"
+#include "Queen.h"
    
 namespace leah_chess {
 HumanPlayer::HumanPlayer() : Player{} {
   std::cout << "HumanPlayer()" << std::endl;
-  pieces.push_back(Rook(0, 0, 'R'));
+  pieces.emplace_back(new Rook(0, 0, 'R'));
+  pieces.emplace_back(new Queen(1, 0, 'Q'));
 }
 
 void HumanPlayer::Play() {

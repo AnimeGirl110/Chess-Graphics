@@ -10,7 +10,7 @@ class Player {
   ~Player();
   virtual void Play() = 0;
 
-  std::vector<Piece> pieces;
+  std::vector<Piece*> pieces;
 
  protected:
 };  
