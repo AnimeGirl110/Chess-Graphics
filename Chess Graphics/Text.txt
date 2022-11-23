@@ -1,0 +1,38 @@
+app
+	has a model
+		** has a vector of actors
+			board
+			black pieces
+			.
+			.
+			white pieces
+			.
+			.
+		**
+		has a player (**NOT AN ACTOR)
+			has pieces*
+		has a player
+			has pieces*
+		player's turn
+	has a view
+		** renders actors
+
+	has a controller
+		player's turn -> update players
+		signals model of interaction data
+
+
+
+** actor
+	has a position (model units)
+	has a dimension (model units)
+	has a texture
+
+
+	//MINIPROJECT: class C : class B : class A
+	// class C -> static vector
+	//class A -> new class A's;
+
+	TODO:
+		finished updated pieces (removed player + extended actor)
+		updated players (each player keeps track of their own pieces; removed Mvc)
