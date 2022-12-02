@@ -10,8 +10,9 @@ void Texture::SetRenderer(SDL_Renderer* renderer) {
   std::cout << "Texture::SetRenderer()" << std::endl;
 }
 
-Texture::Texture() : texture{nullptr}, width{0}, height{0} {
+Texture::Texture(std::string path) : texture{nullptr}, width{0}, height{0} {
   std::cout << "Texture::Texture()" << std::endl;
+  Load(path);
 }
 
 Texture::~Texture() {

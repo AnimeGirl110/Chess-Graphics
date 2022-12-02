@@ -174,7 +174,19 @@
     <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="black_bishop.png" />
+    <Image Include="black_king.png" />
+    <Image Include="black_knight.png" />
+    <Image Include="black_pawn.png" />
+    <Image Include="black_queen.png" />
     <Image Include="black_rook.png" />
+    <Image Include="chessboard.png" />
+    <Image Include="white_bishop.png" />
+    <Image Include="white_king.png" />
+    <Image Include="white_knight.png" />
+    <Image Include="white_pawn.png" />
+    <Image Include="white_queen.png" />
+    <Image Include="white_rook.png" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Text.txt" />

@@ -16,12 +16,11 @@ App::App()
   mvc.view = &view;
   mvc.controller = &controller;
 
-  //model.GetBoard().LogBoard();
 
   while (isRunning) {
     controller.Run();
     model.Run();
-    view.Render();
+    view.Render(); //TODO: optimize view (skip drawing)
   }
 }
 

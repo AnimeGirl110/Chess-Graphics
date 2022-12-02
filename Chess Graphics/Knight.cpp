@@ -2,7 +2,7 @@
 #include "Knight.h"
 
 namespace leah_chess {
-Knight::Knight(int posX, int posY, char name) : Piece{posX, posY, name} {
+Knight::Knight(int posX, int posY, std::string path) : Piece{posX, posY, path} {
   std::cout << "Knight()" << std::endl;
 }
 }  // namespace leah_chess

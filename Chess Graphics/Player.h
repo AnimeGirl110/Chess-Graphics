@@ -11,7 +11,6 @@ class Player {
   virtual void Play() = 0;
 
   std::vector<Piece*> pieces;
-
  protected:
 };  
 }  // namespace leah_chess

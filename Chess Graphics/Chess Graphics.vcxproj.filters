@@ -130,6 +130,42 @@
     <Image Include="black_rook.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="white_king.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="white_queen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="white_bishop.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="white_knight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="white_rook.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="white_pawn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="black_queen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="black_bishop.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="black_knight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="black_pawn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="black_king.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="chessboard.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Text.txt">

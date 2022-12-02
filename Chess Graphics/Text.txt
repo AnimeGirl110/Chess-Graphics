@@ -34,5 +34,6 @@ app
 	//class A -> new class A's;
 
 	TODO:
-		finished updated pieces (removed player + extended actor)
-		updated players (each player keeps track of their own pieces; removed Mvc)
+		update chessboard
+		implement black pieces
+		*** add controls???

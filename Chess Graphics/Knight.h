@@ -3,6 +3,6 @@
 namespace leah_chess {
 class Knight : public Piece {
  public:
-  Knight(int posX, int posY, char name);
+  Knight(int posX, int posY, std::string path);
 };
 }  // namespace leah_chess

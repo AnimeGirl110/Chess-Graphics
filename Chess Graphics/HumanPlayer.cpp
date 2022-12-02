@@ -5,12 +5,25 @@
 
 #include "Rook.h"
 #include "Queen.h"
-   
+#include "Knight.h"
+#include "King.h"
+#include "Pawn.h"
+#include "Bishop.h"
+
 namespace leah_chess {
 HumanPlayer::HumanPlayer() : Player{} {
   std::cout << "HumanPlayer()" << std::endl;
-  pieces.emplace_back(new Rook(0, 0, 'R'));
-  pieces.emplace_back(new Queen(1, 0, 'Q'));
+  for (int i = 0; i < 8; i++) {
+    pieces.emplace_back(new Pawn(i, 1, "white_pawn.png"));
+  }
+  pieces.emplace_back(new Rook(0, 0, "white_rook.png"));
+  pieces.emplace_back(new Rook(7, 0, "white_rook.png"));
+  pieces.emplace_back(new Knight(1, 0, "white_knight.png"));
+  pieces.emplace_back(new Knight(6, 0, "white_knight.png"));
+  pieces.emplace_back(new Bishop(2, 0, "white_bishop.png"));
+  pieces.emplace_back(new Bishop(5, 0, "white_bishop.png"));
+  pieces.emplace_back(new King(3, 0, "white_king.png"));
+  pieces.emplace_back(new Queen(4, 0, "white_queen.png"));
 }
 
 void HumanPlayer::Play() {

@@ -4,8 +4,8 @@
 namespace leah_chess {
 std::vector<Actor*> Actor::actors;
 
-Actor::Actor(int posX, int posY, int dimX, int dimY)
-    : posX{posX}, posY{posY}, dimX{dimX}, dimY{dimY} {
+Actor::Actor(int posX, int posY, int dimX, int dimY, std::string path)
+  : texture{path}, posX{posX}, posY{posY}, dimX{dimX}, dimY{dimY} {
   std::cout << "Actor::Actor()" << std::endl;
   actors.push_back(this);
 }

@@ -2,8 +2,7 @@
 #include <iostream>
 
 namespace leah_chess {
-Rook::Rook(int posX, int posY, char name) : Piece{posX, posY, name} {
+Rook::Rook(int posX, int posY, std::string path) : Piece{posX, posY, path} {
   std::cout << "Rook()" << std::endl; 
-  texture.Load("black_rook.png");
 }
 }  // namespace leah_chess

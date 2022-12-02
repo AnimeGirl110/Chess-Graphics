@@ -5,7 +5,7 @@
 namespace leah_chess {
 class Texture {
  public:
-  Texture();
+  Texture(std::string path);
   ~Texture();
 
   void Load(std::string path);

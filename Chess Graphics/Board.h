@@ -1,15 +1,16 @@
 #pragma once
-#include <vector>
+#include "Actor.h"
 
 namespace leah_chess {
 class Piece;
 class Model;
 
-class Board {
+class Board : public Actor
+{ //make this an actor
  public:
   Board(Model& model);
   ~Board();
-  void LogBoard();
+  //void LogBoard();
  // void UpdatePosition(Piece& piece, Position& toPos);
   //Piece* GetPiece(int row, int col) { return chessboard[row][col]; }
 

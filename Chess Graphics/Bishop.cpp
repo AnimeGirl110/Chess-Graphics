@@ -2,8 +2,8 @@
 #include "Bishop.h"
 
 namespace leah_chess {
-Bishop::Bishop(int posX, int posY, char name)
-    : Piece{posX, posY, name} {
+Bishop::Bishop(int posX, int posY, std::string path)
+    : Piece{posX, posY, path} {
   std::cout << "Bishop()" << std::endl;
 }
 }  // namespace leah_chess

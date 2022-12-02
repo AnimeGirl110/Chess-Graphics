@@ -4,7 +4,7 @@
 #include "Texture.h"
 #include "App.h"
 #include "Config.h"
-#include "Piece.h"
+#include "Actor.h"
 
 namespace leah_chess {
 using std::cout;
@@ -54,7 +54,9 @@ View::~View() {
 void View::Render() { 
   SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
   SDL_RenderClear(renderer);
-  //mvc.model->GetBoard().GetPiece(0, 0)->Render();
+  for (Actor* actor : Actor::actors) {
+    actor->Render();
+  }
   SDL_RenderPresent(renderer);
 }
 }  // namespace leah_chess
