@@ -3,19 +3,41 @@
 #include <string>
 
 namespace leah_chess {
-class Player; 
+class Player;
 
-class Piece : public Actor {
- public:
-  Piece(int posX, int posY, std::string path);
+class Piece : public Actor
+{
+public:
+  static enum PieceType
+  {
+    white_pawn,
+    black_pawn,
+    white_knight,
+    black_knight,
+    white_bishop,
+    black_bishop,
+    white_rook,
+    black_rook,
+    white_queen,
+    black_queen,
+    white_king,
+    black_king
+  };
+
+  Piece(int posX, int posY, std::string path, PieceType type);
   ~Piece();
-  void Render() { texture.Render(posX, 7 - posY, dimX, dimY); } 
-  //so white is at the bottom of the screen
+  void Render();
   int GetPosX() { return posX; }
   int GetPosY() { return posY; }
+  void SetMousePos(int toPosX, int toPosY);
 
   void UpdatePosition(int toPosX, int toPosY);
 
- private:
+private:
+  float mPosX{ 0.0f };
+  float mPosY{ 0.0f };
+
+public:
+  const PieceType type;
 };
-}  // namespace leah_chess
+} // namespace leah_chess

@@ -2,28 +2,29 @@
 #include <string>
 #include "HumanPlayer.h"
 #include "App.h"
+#include "Board.h"
 
-#include "Rook.h"
-#include "Queen.h"
-#include "Knight.h"
-#include "King.h"
-#include "Pawn.h"
-#include "Bishop.h"
+#include "White_Rook.h"
+#include "White_Queen.h"
+#include "White_Knight.h"
+#include "White_King.h"
+#include "White_Pawn.h"
+#include "White_Bishop.h"
 
 namespace leah_chess {
-HumanPlayer::HumanPlayer() : Player{} {
+HumanPlayer::HumanPlayer(Board& board) : Player{board} {
   std::cout << "HumanPlayer()" << std::endl;
   for (int i = 0; i < 8; i++) {
-    pieces.emplace_back(new Pawn(i, 1, "white_pawn.png"));
+    AddPiece(new WhitePawn(i, 1, "white_pawn.png"));
   }
-  pieces.emplace_back(new Rook(0, 0, "white_rook.png"));
-  pieces.emplace_back(new Rook(7, 0, "white_rook.png"));
-  pieces.emplace_back(new Knight(1, 0, "white_knight.png"));
-  pieces.emplace_back(new Knight(6, 0, "white_knight.png"));
-  pieces.emplace_back(new Bishop(2, 0, "white_bishop.png"));
-  pieces.emplace_back(new Bishop(5, 0, "white_bishop.png"));
-  pieces.emplace_back(new King(3, 0, "white_king.png"));
-  pieces.emplace_back(new Queen(4, 0, "white_queen.png"));
+  AddPiece(new WhiteRook(0, 0, "white_rook.png"));
+  AddPiece(new WhiteRook(7, 0, "white_rook.png"));
+  AddPiece(new WhiteKnight(1, 0, "white_knight.png"));
+  AddPiece(new WhiteKnight(6, 0, "white_knight.png"));
+  AddPiece(new WhiteBishop(2, 0, "white_bishop.png"));
+  AddPiece(new WhiteBishop(5, 0, "white_bishop.png"));
+  AddPiece(new WhiteKing(3, 0, "white_king.png"));
+  AddPiece(new WhiteQueen(4, 0, "white_queen.png"));
 }
 
 void HumanPlayer::Play() {

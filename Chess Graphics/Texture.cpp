@@ -1,26 +1,35 @@
 #include "Texture.h"
-#include <iostream>
-#include <SDL_Image.h>
 #include "Config.h"
+#include <SDL_Image.h>
+#include <iostream>
 
 namespace leah_chess {
 SDL_Renderer* Texture::renderer = nullptr;
-void Texture::SetRenderer(SDL_Renderer* renderer) {
+void
+Texture::SetRenderer(SDL_Renderer* renderer)
+{
   Texture::renderer = renderer;
   std::cout << "Texture::SetRenderer()" << std::endl;
 }
 
-Texture::Texture(std::string path) : texture{nullptr}, width{0}, height{0} {
+Texture::Texture(std::string path)
+  : texture{ nullptr }
+  , width{ 0 }
+  , height{ 0 }
+{
   std::cout << "Texture::Texture()" << std::endl;
   Load(path);
 }
 
-Texture::~Texture() {
+Texture::~Texture()
+{
   std::cout << "Texture::~Texture()" << std::endl;
   Free();
 }
 
-void Texture::Load(std::string path) {
+void
+Texture::Load(std::string path)
+{
   std::cout << "Texture::Load()" << std::endl;
   Free();
   SDL_Surface* loadedSurface = IMG_Load(path.c_str());
@@ -42,7 +51,9 @@ void Texture::Load(std::string path) {
   SDL_FreeSurface(loadedSurface);
 }
 
-void Texture::Free() {
+void
+Texture::Free()
+{
   if (texture) {
     SDL_DestroyTexture(texture);
     texture = nullptr;
@@ -51,15 +62,26 @@ void Texture::Free() {
   }
 }
 
-void Texture::Render(int posX, int posY, int dimX, int dimY) {
-  SDL_Rect dstRect{
-    posX * SCREEN_WIDTH / 8,
-    posY * SCREEN_HEIGHT /8,
-    dimX * SCREEN_WIDTH / 8,
-    dimY * SCREEN_HEIGHT / 8
-  };
-  SDL_Point center{dimX * SCREEN_HEIGHT / 16, dimY * SCREEN_HEIGHT / 16};
-  SDL_RenderCopyEx(renderer, texture, NULL, &dstRect, 0.0, &center,
-                   SDL_FLIP_NONE);
+void
+Texture::Render(int posX, int posY, int dimX, int dimY)
+{
+  SDL_Rect dstRect{ posX * SCREEN_WIDTH / 8,
+                    posY * SCREEN_HEIGHT / 8,
+                    dimX * SCREEN_WIDTH / 8,
+                    dimY * SCREEN_HEIGHT / 8 };
+  SDL_Point center{ dimX * SCREEN_HEIGHT / 16, dimY * SCREEN_HEIGHT / 16 };
+  SDL_RenderCopyEx(
+    renderer, texture, NULL, &dstRect, 0.0, &center, SDL_FLIP_NONE);
 }
-}  // namespace leah_chess
+void
+Texture::Animate(float posX, float posY, float dimX, float dimY)
+{
+  SDL_Rect dstRect{ posX * SCREEN_WIDTH / 8,
+                    posY * SCREEN_HEIGHT / 8,
+                    dimX * SCREEN_WIDTH / 8,
+                    dimY * SCREEN_HEIGHT / 8 };
+  SDL_Point center{ dimX * SCREEN_HEIGHT / 16, dimY * SCREEN_HEIGHT / 16 };
+  SDL_RenderCopyEx(
+    renderer, texture, NULL, &dstRect, 0.0, &center, SDL_FLIP_NONE);
+}
+}

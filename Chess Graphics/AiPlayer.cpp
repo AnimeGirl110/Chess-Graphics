@@ -1,28 +1,29 @@
 #include <iostream>
 #include "AiPlayer.h"
 #include "App.h"
+#include "Board.h"
 
-#include "Rook.h"
-#include "Queen.h"
-#include "Knight.h"
-#include "King.h"
-#include "Pawn.h"
-#include "Bishop.h"
+#include "Black_Rook.h"
+#include "Black_Queen.h"
+#include "Black_Knight.h"
+#include "Black_King.h"
+#include "Black_Pawn.h"
+#include "Black_Bishop.h"
 
 namespace leah_chess {
-AiPlayer::AiPlayer() : Player{} {
+AiPlayer::AiPlayer(Board& board) : Player{board} {
   std::cout << "AiPlayer()" << std::endl;
   for (int i = 0; i < 8; i++) {
-    pieces.emplace_back(new Pawn(i, 6, "black_pawn.png"));
+    AddPiece(new BlackPawn(i, 6, "black_pawn.png"));
   }
-  pieces.emplace_back(new Rook(0, 7, "black_rook.png"));
-  pieces.emplace_back(new Rook(7, 7, "black_rook.png"));
-  pieces.emplace_back(new Knight(1, 7, "black_knight.png"));
-  pieces.emplace_back(new Knight(6, 7, "black_knight.png"));
-  pieces.emplace_back(new Bishop(2, 7, "black_bishop.png"));
-  pieces.emplace_back(new Bishop(5, 7, "black_bishop.png"));
-  pieces.emplace_back(new King(4, 7, "black_king.png"));
-  pieces.emplace_back(new Queen(3, 7, "black_queen.png"));
+  AddPiece(new BlackRook(0, 7, "black_rook.png"));
+  AddPiece(new BlackRook(7, 7, "black_rook.png"));
+  AddPiece(new BlackKnight(1, 7, "black_knight.png"));
+  AddPiece(new BlackKnight(6, 7, "black_knight.png"));
+  AddPiece(new BlackBishop(2, 7, "black_bishop.png"));
+  AddPiece(new BlackBishop(5, 7, "black_bishop.png"));
+  AddPiece(new BlackKing(4, 7, "black_king.png"));
+  AddPiece(new BlackQueen(3, 7, "black_queen.png"));
 }
 
 void AiPlayer::Play() {}

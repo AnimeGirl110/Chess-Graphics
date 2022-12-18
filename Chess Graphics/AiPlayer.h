@@ -2,10 +2,11 @@
 #include "Player.h"
 
 namespace leah_chess {
+class Board;
 
 class AiPlayer : public Player {
  public:
-  AiPlayer();
+  AiPlayer(Board& board);
   void Play() override;
 
  private:

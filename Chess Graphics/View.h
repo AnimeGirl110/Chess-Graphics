@@ -1,8 +1,6 @@
 #pragma once
 #include <SDL.h>
-
 #include <vector>
-
 #include "Texture.h"
 
 namespace leah_chess {

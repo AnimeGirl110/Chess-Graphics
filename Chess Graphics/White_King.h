@@ -1,9 +1,9 @@
 #pragma once
 #include "Piece.h"
-
 namespace leah_chess {
-class Bishop : public Piece {
+class WhiteKing : public Piece
+{
  public:
-  Bishop(int posX, int posY, std::string name);
+  WhiteKing(int posX, int posY, std::string path);
 };
 }  // namespace leah_chess

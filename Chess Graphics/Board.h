@@ -10,12 +10,14 @@ class Board : public Actor
  public:
   Board(Model& model);
   ~Board();
-  //void LogBoard();
- // void UpdatePosition(Piece& piece, Position& toPos);
-  //Piece* GetPiece(int row, int col) { return chessboard[row][col]; }
+  void LogBoard();
 
- // Piece* chessboard[8][8];
+  void MovePiece(Piece* piece, int oldRow, int oldCol);
+  void RemovePiece(Piece* piece);
+  void AddPiece(Piece* piece);
+
  private:
   Model& model;
+  Piece* chessboard[8][8];
 };
 }  // namespace leah_chess

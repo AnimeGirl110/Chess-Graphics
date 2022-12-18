@@ -11,6 +11,7 @@ class Texture {
   void Load(std::string path);
   void Free();
   void Render(int posX, int posY, int dimX, int dimY);
+  void Animate(float posX, float posY, float dimX, float dimY);
 
   static SDL_Renderer* renderer;
   static void SetRenderer(SDL_Renderer* renderer);
