@@ -4,11 +4,13 @@
 
 namespace leah_chess {
 class Player;
+class Board;
+class HumanPlayer;
 
 class Piece : public Actor
 {
 public:
-  static enum PieceType
+  enum PieceType
   {
     white_pawn,
     black_pawn,
@@ -30,14 +32,19 @@ public:
   int GetPosX() { return posX; }
   int GetPosY() { return posY; }
   void SetMousePos(int toPosX, int toPosY);
+  void SetIsAnimating(bool state) { isAnimating = state; }
+  virtual bool CheckMove(Piece* piece, int row, int col);
 
   void UpdatePosition(int toPosX, int toPosY);
 
 private:
   float mPosX{ 0.0f };
   float mPosY{ 0.0f };
+  bool isAnimating{ false };
 
 public:
   const PieceType type;
+  static Board* board;
+  static HumanPlayer* humanPlayer;
 };
 } // namespace leah_chess

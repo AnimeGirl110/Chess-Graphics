@@ -147,7 +147,9 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -173,7 +175,9 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="HumanPlayer.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="Piece.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Texture.h" />

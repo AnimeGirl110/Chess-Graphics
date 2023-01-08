@@ -80,6 +80,7 @@ Texture::Animate(float posX, float posY, float dimX, float dimY)
                     posY * SCREEN_HEIGHT / 8,
                     dimX * SCREEN_WIDTH / 8,
                     dimY * SCREEN_HEIGHT / 8 };
+
   SDL_Point center{ dimX * SCREEN_HEIGHT / 16, dimY * SCREEN_HEIGHT / 16 };
   SDL_RenderCopyEx(
     renderer, texture, NULL, &dstRect, 0.0, &center, SDL_FLIP_NONE);

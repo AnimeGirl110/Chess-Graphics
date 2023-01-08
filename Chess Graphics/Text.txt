@@ -33,7 +33,6 @@ app
 	// class C -> static vector
 	//class A -> new class A's;
 
-	TODO:
-		remove path to png from constructor of each piece, change to static
-		start working on legalmove
-		ai ?
+	NOTE:
+			-- actors take parameters as {posX, posY} or {col, row}
+			-- every other function takes parameters as {posY, posX} or {row, col}

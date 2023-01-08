@@ -15,16 +15,16 @@ namespace leah_chess {
 HumanPlayer::HumanPlayer(Board& board) : Player{board} {
   std::cout << "HumanPlayer()" << std::endl;
   for (int i = 0; i < 8; i++) {
-    AddPiece(new WhitePawn(i, 1, "white_pawn.png"));
+    AddPiece(new WhitePawn(i, 1));
   }
-  AddPiece(new WhiteRook(0, 0, "white_rook.png"));
-  AddPiece(new WhiteRook(7, 0, "white_rook.png"));
-  AddPiece(new WhiteKnight(1, 0, "white_knight.png"));
-  AddPiece(new WhiteKnight(6, 0, "white_knight.png"));
-  AddPiece(new WhiteBishop(2, 0, "white_bishop.png"));
-  AddPiece(new WhiteBishop(5, 0, "white_bishop.png"));
-  AddPiece(new WhiteKing(3, 0, "white_king.png"));
-  AddPiece(new WhiteQueen(4, 0, "white_queen.png"));
+  AddPiece(new WhiteRook(0, 0));
+  AddPiece(new WhiteRook(7, 0));
+  AddPiece(new WhiteKnight(1, 0));
+  AddPiece(new WhiteKnight(6, 0));
+  AddPiece(new WhiteBishop(2, 0));
+ AddPiece(new WhiteBishop(5, 0));
+ AddPiece(new WhiteKing(4, 0));
+ AddPiece(new WhiteQueen(3, 0));
 }
 
 void HumanPlayer::Play() {

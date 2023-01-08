@@ -12,6 +12,7 @@ class Board : public Actor
   ~Board();
   void LogBoard();
 
+  Piece* GetPiece(int row, int col) { return chessboard[row][col];}
   void MovePiece(Piece* piece, int oldRow, int oldCol);
   void RemovePiece(Piece* piece);
   void AddPiece(Piece* piece);

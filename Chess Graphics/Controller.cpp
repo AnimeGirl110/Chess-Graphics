@@ -24,10 +24,12 @@ void Controller::Run() {
       SDL_GetMouseState(&posX, &posY);
       mouseOnPiece = CheckIfOnPiece(posX, posY);
       if (mouseOnPiece) {
-        std::cout << mouseOnPiece->GetPosX() << ", " << mouseOnPiece->GetPosY()
-                  << std::endl;
+        mouseOnPiece->SetIsAnimating(true);
+        mouseOnPiece->SetMousePos(posX, posY);
+        //std::cout << mouseOnPiece->GetPosX() << ", " << mouseOnPiece->GetPosY()
+         //        << std::endl;
       } else {
-        std::cout << "No piece here" << std::endl;
+        std::cout << "The place you clicked has no piece" << std::endl;
       }
     }
     if (e.type == SDL_MOUSEMOTION && mouseOnPiece) {
@@ -43,8 +45,11 @@ void Controller::Run() {
       int col = mPosX / 64;
       if (mvc.model->IsLegalMove(mouseOnPiece, row, col)) {
         mvc.model->GetHumanPlayer().MovePiece(mouseOnPiece, row, col);
+        mvc.model->isWhiteTurn = false;
+        mvc.model->GetAiPlayer().Play();
+        mvc.model->isWhiteTurn = true;
       }
-      mouseOnPiece->SetMousePos(0, 0); //so it doesn't animate
+      mouseOnPiece->SetIsAnimating(false);
       mouseOnPiece = nullptr;
     }
   }
